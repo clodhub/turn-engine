@@ -55,7 +55,7 @@
           "$ref": "#/components/schemas/ComputersPart"
         }
       },
-      "x-ourapps-property": true,
+      "x-clodhub-property": true,
       "tags": [
         {
           "name": "typescript"
@@ -1811,7 +1811,7 @@
               "legal",
               "prompt"
             ],
-            "x-ourapps-interface": "ae/game-rules"
+            "x-clodhub-interface": "ae/game-rules"
           },
           "seating": {
             "type": "object",
@@ -1908,7 +1908,7 @@
               "retain",
               "compact"
             ],
-            "x-ourapps-interface": "ae/seating"
+            "x-clodhub-interface": "ae/seating"
           },
           "clock": {
             "type": "object",
@@ -1937,7 +1937,7 @@
               "elapsed",
               "wallAt"
             ],
-            "x-ourapps-interface": "ae/game-clock"
+            "x-clodhub-interface": "ae/game-clock"
           },
           "views": {
             "type": "object",
@@ -1950,7 +1950,7 @@
             "required": [
               "redact"
             ],
-            "x-ourapps-interface": "ae/private-views"
+            "x-clodhub-interface": "ae/private-views"
           },
           "presence": {
             "type": "object",
@@ -2063,7 +2063,7 @@
               "holds",
               "nextWake"
             ],
-            "x-ourapps-interface": "ae/presence"
+            "x-clodhub-interface": "ae/presence"
           },
           "tournament": {
             "type": "object",
@@ -2168,7 +2168,7 @@
               "cancel",
               "winner"
             ],
-            "x-ourapps-interface": "ae/tournament"
+            "x-clodhub-interface": "ae/tournament"
           },
           "computers": {
             "$ref": "#/components/schemas/ComputersPart"
@@ -2192,7 +2192,7 @@
               "push",
               "list"
             ],
-            "x-ourapps-interface": "ae/round-history"
+            "x-clodhub-interface": "ae/round-history"
           },
           "settings": {
             "type": "object",
@@ -2205,7 +2205,7 @@
             "required": [
               "value"
             ],
-            "x-ourapps-interface": "ae/rules-settings"
+            "x-clodhub-interface": "ae/rules-settings"
           }
         },
         "required": [
@@ -2272,7 +2272,7 @@
           "choose",
           "observe"
         ],
-        "x-ourapps-interface": "ae/computer-players"
+        "x-clodhub-interface": "ae/computer-players"
       },
       "GameAdapter": {
         "type": "object",
@@ -2317,7 +2317,7 @@
       }
     }
   },
-  "x-ourapps-modules": {
+  "x-clodhub-modules": {
     "server": "server/index.ts"
   }
 }

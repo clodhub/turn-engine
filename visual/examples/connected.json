@@ -7,12 +7,12 @@
   "focus": "component",
   "definitions": [
     {
-      "id": "ourapps-ae.turn-engine",
+      "id": "clodhub.turn-engine",
       "name": "Turn engine",
       "kind": "component",
       "status": "example",
-      "package": "ourapps-ae/turn-engine",
-      "version": "0.11.0",
+      "package": "clodhub/turn-engine",
+      "version": "0.12.0",
       "ports": [
         {
           "id": "game-rules",
@@ -252,7 +252,7 @@
     {
       "id": "component",
       "name": "Turn engine",
-      "definition": "ourapps-ae.turn-engine",
+      "definition": "clodhub.turn-engine",
       "configuration": {}
     },
     {

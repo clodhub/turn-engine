@@ -66,7 +66,7 @@
           "$ref": "#/components/schemas/HoldemSettings"
         }
       },
-      "x-ourapps-property": true,
+      "x-clodhub-property": true,
       "tags": [
         {
           "name": "server"
@@ -84,7 +84,7 @@
           "$ref": "#/components/schemas/Pacing"
         }
       },
-      "x-ourapps-property": true,
+      "x-clodhub-property": true,
       "tags": [
         {
           "name": "server"
@@ -112,7 +112,7 @@
           }
         }
       },
-      "x-ourapps-property": true,
+      "x-clodhub-property": true,
       "tags": [
         {
           "name": "server"
@@ -130,7 +130,7 @@
           "$ref": "#/components/schemas/HoldemSettings"
         }
       },
-      "x-ourapps-property": true,
+      "x-clodhub-property": true,
       "tags": [
         {
           "name": "server"
@@ -148,7 +148,7 @@
           "$ref": "#/components/schemas/Pacing"
         }
       },
-      "x-ourapps-property": true,
+      "x-clodhub-property": true,
       "tags": [
         {
           "name": "server"
@@ -166,7 +166,7 @@
           "$ref": "#/components/schemas/Holdem"
         }
       },
-      "x-ourapps-property": true,
+      "x-clodhub-property": true,
       "tags": [
         {
           "name": "server"
@@ -188,7 +188,7 @@
           "maxItems": 0
         }
       },
-      "x-ourapps-property": true,
+      "x-clodhub-property": true,
       "tags": [
         {
           "name": "server"
@@ -901,7 +901,7 @@
           "$ref": "#/components/schemas/HoldemSettings"
         }
       },
-      "x-ourapps-property": true,
+      "x-clodhub-property": true,
       "tags": [
         {
           "name": "server"
@@ -2458,7 +2458,7 @@
         ],
         "additionalProperties": false,
         "description": "chip-ledger's Ledger.",
-        "x-ourapps-interface": "ae/chip-ledger"
+        "x-clodhub-interface": "ae/chip-ledger"
       },
       "PotRules": {
         "type": "object",
@@ -3397,7 +3397,7 @@
         ],
         "additionalProperties": false,
         "description": "private-views' HiddenRecord for one player's hole cards.",
-        "x-ourapps-interface": "ae/private-views"
+        "x-clodhub-interface": "ae/private-views"
       },
       "DecisionInput": {
         "type": "object",
@@ -3577,7 +3577,7 @@
         ],
         "additionalProperties": false,
         "description": "poker-strategy's DecisionInput without style.",
-        "x-ourapps-interface": "ae/player-strategy"
+        "x-clodhub-interface": "ae/player-strategy"
       },
       "PublicView": {
         "type": "object",
@@ -3788,7 +3788,7 @@
           "compareEvaluations",
           "winners"
         ],
-        "x-ourapps-interface": "ae/hand-ranking"
+        "x-clodhub-interface": "ae/hand-ranking"
       },
       "LedgerOperations": {
         "type": "object",
@@ -3845,7 +3845,7 @@
           "voidHand",
           "nextHand"
         ],
-        "x-ourapps-interface": "ae/chip-ledger"
+        "x-clodhub-interface": "ae/chip-ledger"
       },
       "DeckOperations": {
         "type": "object",
@@ -3858,7 +3858,7 @@
         "required": [
           "createShuffledDeck"
         ],
-        "x-ourapps-interface": "ae/card-deck"
+        "x-clodhub-interface": "ae/card-deck"
       },
       "BlindSchedule": {
         "type": "object",
@@ -3871,7 +3871,7 @@
         "required": [
           "levelInfo"
         ],
-        "x-ourapps-interface": "ae/level-schedule"
+        "x-clodhub-interface": "ae/level-schedule"
       },
       "RuleValues": {
         "type": "object",
@@ -3884,7 +3884,7 @@
         "required": [
           "value"
         ],
-        "x-ourapps-interface": "ae/rules-settings"
+        "x-clodhub-interface": "ae/rules-settings"
       },
       "GameRules": {
         "type": "object",
@@ -3990,7 +3990,7 @@
       }
     }
   },
-  "x-ourapps-modules": {
+  "x-clodhub-modules": {
     "web": "web/index.ts",
     "server": "server/index.ts",
     "android": "android/src/main/java",

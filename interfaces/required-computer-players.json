@@ -143,7 +143,7 @@
           "$ref": "#/components/schemas/CheckedSettings"
         }
       },
-      "x-ourapps-property": true,
+      "x-clodhub-property": true,
       "tags": [
         {
           "name": "typescript"
@@ -924,7 +924,7 @@
           "choose",
           "observe"
         ],
-        "x-ourapps-interface": "ae/player-strategy"
+        "x-clodhub-interface": "ae/player-strategy"
       },
       "Clock": {
         "type": "object",
@@ -941,7 +941,7 @@
           "elapsed",
           "wallAt"
         ],
-        "x-ourapps-interface": "ae/game-clock"
+        "x-clodhub-interface": "ae/game-clock"
       },
       "SeatsApi": {
         "type": "object",
@@ -970,7 +970,7 @@
           "join",
           "canAddComputer"
         ],
-        "x-ourapps-interface": "ae/seating"
+        "x-clodhub-interface": "ae/seating"
       },
       "Computers": {
         "type": "object",
@@ -1001,7 +1001,7 @@
       }
     }
   },
-  "x-ourapps-modules": {
+  "x-clodhub-modules": {
     "server": "server/index.ts"
   }
 }

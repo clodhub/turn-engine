@@ -1,9 +1,9 @@
 # Turn engine instructions
 
 ## For the agent
-Select `ourapps-ae/turn-engine` once per recipe. Connect `game-rules` to the game (holdem-rules for poker), and `seating`, `game-clock`, `private-views`, `presence`, `tournament`, `computer-players`, `round-history` and `rules-settings` to those components; connect the provided `game-adapter` to realtime-rooms' `game` requirement. Leave `decisionSeconds` empty unless the recipe sets it outside the house rules. `computer-players` is an optional requirement: a recipe without computer players leaves it unconnected, and in code `parts.computers` is left out (the engine then uses the no-computers stand-in). Connect it when computer players are wanted. The engine passes game-clock `advance` the flags `{action, level}`: the level clock stops while `tournament.levelClockRuns` is false, so blind levels do not run during a rebuy decision.
+Select `clodhub/turn-engine` once per recipe. Connect `game-rules` to the game (holdem-rules for poker), and `seating`, `game-clock`, `private-views`, `presence`, `tournament`, `computer-players`, `round-history` and `rules-settings` to those components; connect the provided `game-adapter` to realtime-rooms' `game` requirement. Leave `decisionSeconds` empty unless the recipe sets it outside the house rules. `computer-players` is an optional requirement: a recipe without computer players leaves it unconnected, and in code `parts.computers` is left out (the engine then uses the no-computers stand-in). Connect it when computer players are wanted. The engine passes game-clock `advance` the flags `{action, level}`: the level clock stops while `tournament.levelClockRuns` is false, so blind levels do not run during a rebuy decision.
 
-- Select package `ourapps-ae/turn-engine` version `0.11.0`.
+- Select package `clodhub/turn-engine` version `0.12.0`.
 - Settings to configure:
   - `decisionSeconds` (integer; optional)
   - `settleMs` (integer; optional; default `4000`)
@@ -29,4 +29,4 @@ Nothing to supply: no accounts or keys. Write one `createGameAdapter(parts)` cal
 From the component directory:
 
 - `node --test tests/web.test.ts` (web, required-local; tools: node 26.5)
-- `python3 -m aepm review <digest> --store STORE --policy POLICY --trusted --allow-network` checks an archive fetched with `python3 -m aepm fetch ourapps-ae/turn-engine@VERSION --store STORE --from https://ourapps.app` and runs its suites.
+- `python3 -m aepm review <digest> --store STORE --policy POLICY --trusted --allow-network` checks an archive fetched with `python3 -m aepm fetch clodhub/turn-engine@VERSION --store STORE --from https://clodhub.com` and runs its suites.

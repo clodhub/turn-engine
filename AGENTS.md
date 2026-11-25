@@ -1,4 +1,4 @@
 # turn-engine
 
-Repository: `ourapps-ae/turn-engine`. Read `.opencode/knowledge/00-index.md` and `workflow.md` before work.
-Local only: no commits, pushes or publishing without George's say-so. Licence wording and distribution permissions remain deferred.
+Repository: `clodhub/turn-engine`. Read `.opencode/knowledge/00-index.md` and `workflow.md` before work.
+Licence: Apache-2.0 (`LICENCE`, `NOTICE`).
