@@ -1,9 +1,9 @@
 {
   "openrpc": "1.3.2",
   "info": {
-    "title": "ae/game-rules",
+    "title": "com.clodhub/game-rules",
     "version": "1.0.0",
-    "description": "The game-rules interface a turn engine drives, provided for Texas hold'em. Build it with createGameRules(deps, settings, pacing); methods named `GameRules.<name>` are members of the object it returns. A round is { hand, autoSteps }: JSON-safe and opaque to the engine. The chip ledger (ae/chip-ledger) is passed in and returned on every call that moves chips; the hand moves chips only through chip-ledger operations, so the ledger's sidePots, oddChipRule and minimumUnit settings decide the pots. Every operation is pure: it returns new values and never changes its arguments. Engine contract: at the start of a round call newRound with the players still in, keep the returned carry for the next round and write the returned ledger back; while phase(...).stage is acting, wait for a move, parseMove it and act it (or act defaultMove with auto true), writing the ledger back every time; while it is auto, call step after autoDelayMs; when it is over, outcome gives holdMs for the result pause, result for the clients and historyEntry for round-history; to cancel mid-round, voidRound returns every wager through the ledger. The lower layer, the hand state machine, is createHoldem; its members are the `Holdem.<name>` methods. Server: TypeScript `implementation/server/index.ts` (rules.ts, holdem.ts, pots.ts, types.ts). Client betting controls: TypeScript `implementation/web/betting.ts`; Swift `implementation/apple/Sources/Betting.swift` and Kotlin `ae.holdem` `Betting.kt` have BetRange (adjusted, allows, canSlide, kind, snap rounding down), betStep, betPresets, callIsAllIn and betIsAllIn."
+    "description": "The game-rules interface a turn engine drives, provided for Texas hold'em. Build it with createGameRules(deps, settings, pacing); methods named `GameRules.<name>` are members of the object it returns. A round is { hand, autoSteps }: JSON-safe and opaque to the engine. The chip ledger (com.clodhub/chip-ledger) is passed in and returned on every call that moves chips; the hand moves chips only through chip-ledger operations, so the ledger's sidePots, oddChipRule and minimumUnit settings decide the pots. Every operation is pure: it returns new values and never changes its arguments. Engine contract: at the start of a round call newRound with the players still in, keep the returned carry for the next round and write the returned ledger back; while phase(...).stage is acting, wait for a move, parseMove it and act it (or act defaultMove with auto true), writing the ledger back every time; while it is auto, call step after autoDelayMs; when it is over, outcome gives holdMs for the result pause, result for the clients and historyEntry for round-history; to cancel mid-round, voidRound returns every wager through the ledger. The lower layer, the hand state machine, is createHoldem; its members are the `Holdem.<name>` methods. Server: TypeScript `implementation/server/index.ts` (rules.ts, holdem.ts, pots.ts, types.ts). Client betting controls: TypeScript `implementation/web/betting.ts`; Swift `implementation/apple/Sources/Betting.swift` and Kotlin `com.clodhub.holdem` `Betting.kt` have BetRange (adjusted, allows, canSlide, kind, snap rounding down), betStep, betPresets, callIsAllIn and betIsAllIn."
   },
   "methods": [
     {
@@ -2458,7 +2458,7 @@
         ],
         "additionalProperties": false,
         "description": "chip-ledger's Ledger.",
-        "x-clodhub-interface": "ae/chip-ledger"
+        "x-clodhub-interface": "com.clodhub/chip-ledger"
       },
       "PotRules": {
         "type": "object",
@@ -3397,7 +3397,7 @@
         ],
         "additionalProperties": false,
         "description": "private-views' HiddenRecord for one player's hole cards.",
-        "x-clodhub-interface": "ae/private-views"
+        "x-clodhub-interface": "com.clodhub/private-views"
       },
       "DecisionInput": {
         "type": "object",
@@ -3577,7 +3577,7 @@
         ],
         "additionalProperties": false,
         "description": "poker-strategy's DecisionInput without style.",
-        "x-clodhub-interface": "ae/player-strategy"
+        "x-clodhub-interface": "com.clodhub/player-strategy"
       },
       "PublicView": {
         "type": "object",
@@ -3788,7 +3788,7 @@
           "compareEvaluations",
           "winners"
         ],
-        "x-clodhub-interface": "ae/hand-ranking"
+        "x-clodhub-interface": "com.clodhub/hand-ranking"
       },
       "LedgerOperations": {
         "type": "object",
@@ -3845,7 +3845,7 @@
           "voidHand",
           "nextHand"
         ],
-        "x-clodhub-interface": "ae/chip-ledger"
+        "x-clodhub-interface": "com.clodhub/chip-ledger"
       },
       "DeckOperations": {
         "type": "object",
@@ -3858,7 +3858,7 @@
         "required": [
           "createShuffledDeck"
         ],
-        "x-clodhub-interface": "ae/card-deck"
+        "x-clodhub-interface": "com.clodhub/card-deck"
       },
       "BlindSchedule": {
         "type": "object",
@@ -3871,7 +3871,7 @@
         "required": [
           "levelInfo"
         ],
-        "x-clodhub-interface": "ae/level-schedule"
+        "x-clodhub-interface": "com.clodhub/level-schedule"
       },
       "RuleValues": {
         "type": "object",
@@ -3884,7 +3884,7 @@
         "required": [
           "value"
         ],
-        "x-clodhub-interface": "ae/rules-settings"
+        "x-clodhub-interface": "com.clodhub/rules-settings"
       },
       "GameRules": {
         "type": "object",

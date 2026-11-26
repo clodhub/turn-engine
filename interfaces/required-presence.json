@@ -1,7 +1,7 @@
 {
   "openrpc": "1.3.2",
   "info": {
-    "title": "ae/presence",
+    "title": "com.clodhub/presence",
     "version": "1.0.0",
     "description": "Who is present, who has gone quiet, and whether the activity pauses or carries on (TypeScript module server/presence.ts). Pure functions over plain JSON state; the caller supplies the clock and keeps the state. Participant ids are the ids guest-identity issues; automatic participants (computer players) are always present. Presence is the one owner of pause flags (hostAbsent, allOffline, manual) and holds (look, learn); an engine derives game-clock run flags from them. Events: a request from a participant is seen; a live connection opening or closing is setLive; the application going to the background is away; time passing is refresh. Methods named PresenceApi.* are the functions of createPresenceApi(settings), which a turn engine calls.",
     "license": {

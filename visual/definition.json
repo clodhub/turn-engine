@@ -1,17 +1,17 @@
 {
-  "id": "clodhub.turn-engine",
+  "id": "com.clodhub.turn-engine",
   "name": "Turn engine",
   "kind": "component",
   "status": "example",
-  "package": "clodhub/turn-engine",
-  "version": "0.12.0",
+  "package": "pkg:clod/com.clodhub/turn-engine",
+  "version": "0.13.0",
   "ports": [
     {
       "id": "game-rules",
       "name": "Game rules",
       "direction": "input",
       "kind": "interface",
-      "type": "ae/game-rules",
+      "type": "com.clodhub/game-rules",
       "version": "1.0.0",
       "required": true,
       "cardinality": "one"
@@ -21,7 +21,7 @@
       "name": "Seating",
       "direction": "input",
       "kind": "interface",
-      "type": "ae/seating",
+      "type": "com.clodhub/seating",
       "version": "1.0.0",
       "required": true,
       "cardinality": "one"
@@ -31,7 +31,7 @@
       "name": "Game clock",
       "direction": "input",
       "kind": "interface",
-      "type": "ae/game-clock",
+      "type": "com.clodhub/game-clock",
       "version": "1.0.0",
       "required": true,
       "cardinality": "one"
@@ -41,7 +41,7 @@
       "name": "Private views",
       "direction": "input",
       "kind": "interface",
-      "type": "ae/private-views",
+      "type": "com.clodhub/private-views",
       "version": "1.0.0",
       "required": true,
       "cardinality": "one"
@@ -51,7 +51,7 @@
       "name": "Presence",
       "direction": "input",
       "kind": "interface",
-      "type": "ae/presence",
+      "type": "com.clodhub/presence",
       "version": "1.0.0",
       "required": true,
       "cardinality": "one"
@@ -61,7 +61,7 @@
       "name": "Tournament",
       "direction": "input",
       "kind": "interface",
-      "type": "ae/tournament",
+      "type": "com.clodhub/tournament",
       "version": "1.0.0",
       "required": true,
       "cardinality": "one"
@@ -71,7 +71,7 @@
       "name": "Computer players",
       "direction": "input",
       "kind": "interface",
-      "type": "ae/computer-players",
+      "type": "com.clodhub/computer-players",
       "version": "1.0.0",
       "required": false,
       "cardinality": "one"
@@ -81,7 +81,7 @@
       "name": "Round history",
       "direction": "input",
       "kind": "interface",
-      "type": "ae/round-history",
+      "type": "com.clodhub/round-history",
       "version": "1.0.0",
       "required": true,
       "cardinality": "one"
@@ -91,7 +91,7 @@
       "name": "Rules settings",
       "direction": "input",
       "kind": "interface",
-      "type": "ae/rules-settings",
+      "type": "com.clodhub/rules-settings",
       "version": "1.0.0",
       "required": true,
       "cardinality": "one"
@@ -101,7 +101,7 @@
       "name": "Game adapter",
       "direction": "output",
       "kind": "interface",
-      "type": "ae/game-adapter",
+      "type": "com.clodhub/game-adapter",
       "version": "1.0.0"
     }
   ],

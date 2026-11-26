@@ -1,9 +1,9 @@
 {
   "openrpc": "1.3.2",
   "info": {
-    "title": "ae/game-clock",
+    "title": "com.clodhub/game-clock",
     "version": "1.0.0",
-    "description": "Game clocks as pure functions over an injected `now` (epoch milliseconds). The caller says which clocks run between two readings (create, advance, reset, elapsed, wallAt); pauses and holds belong to presence and are not stored here. The action clock times decisions, runouts, result holds and offers; the level clock times stake levels. Timers (after, startDecision, startThinking, renewIfPresent, delay, isDue, remainingMs, settleLeftMs, timeoutAction, nextWake) read the action clock. Server: TypeScript `implementation/server/clock.ts`. Client countdowns: TypeScript `implementation/web/countdown.ts` (remaining, endsAt, formatClock), Swift `implementation/apple/Sources/Countdown.swift` and Kotlin `ae.clock` `Countdown.kt` (remaining, formatClock). Every function returns a new value."
+    "description": "Game clocks as pure functions over an injected `now` (epoch milliseconds). The caller says which clocks run between two readings (create, advance, reset, elapsed, wallAt); pauses and holds belong to presence and are not stored here. The action clock times decisions, runouts, result holds and offers; the level clock times stake levels. Timers (after, startDecision, startThinking, renewIfPresent, delay, isDue, remainingMs, settleLeftMs, timeoutAction, nextWake) read the action clock. Server: TypeScript `implementation/server/clock.ts`. Client countdowns: TypeScript `implementation/web/countdown.ts` (remaining, endsAt, formatClock), Swift `implementation/apple/Sources/Countdown.swift` and Kotlin `com.clodhub.clock` `Countdown.kt` (remaining, formatClock). Every function returns a new value."
   },
   "methods": [
     {

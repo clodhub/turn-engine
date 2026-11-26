@@ -26,18 +26,18 @@ Dependencies: none.
 `tools.lock.json` pins verification tools: node 26.5. Licence: `Apache-2.0` (`LICENCE`, `NOTICE`).
 
 ## Provided interfaces
-- `interfaces/game-adapter.json` defines `game-adapter` (ae/game-adapter) version 1.0.0: an OpenRPC 1.3.2 document, one method per function (a member of a created object is `<Type>.<member>`), with parameter, result and data types as JSON Schema 2020-12 (`components.schemas`) and thrown errors under `errors`.
+- `interfaces/game-adapter.json` defines `game-adapter` (com.clodhub/game-adapter) version 1.0.0: an OpenRPC 1.3.2 document, one method per function (a member of a created object is `<Type>.<member>`), with parameter, result and data types as JSON Schema 2020-12 (`components.schemas`) and thrown errors under `errors`.
 
 ## Required interfaces
-- `game-rules` (ae/game-rules) version 1.0.0, supplied by the recipe or application.
-- `seating` (ae/seating) version 1.0.0, supplied by the recipe or application.
-- `game-clock` (ae/game-clock) version 1.0.0, supplied by the recipe or application.
-- `private-views` (ae/private-views) version 1.0.0, supplied by the recipe or application.
-- `presence` (ae/presence) version 1.0.0, supplied by the recipe or application.
-- `tournament` (ae/tournament) version 1.0.0, supplied by the recipe or application.
-- `computer-players` (ae/computer-players) version 1.0.0, supplied by the recipe or application (optional; may stay unconnected).
-- `round-history` (ae/round-history) version 1.0.0, supplied by the recipe or application.
-- `rules-settings` (ae/rules-settings) version 1.0.0, supplied by the recipe or application.
+- `game-rules` (com.clodhub/game-rules) version 1.0.0, supplied by the recipe or application.
+- `seating` (com.clodhub/seating) version 1.0.0, supplied by the recipe or application.
+- `game-clock` (com.clodhub/game-clock) version 1.0.0, supplied by the recipe or application.
+- `private-views` (com.clodhub/private-views) version 1.0.0, supplied by the recipe or application.
+- `presence` (com.clodhub/presence) version 1.0.0, supplied by the recipe or application.
+- `tournament` (com.clodhub/tournament) version 1.0.0, supplied by the recipe or application.
+- `computer-players` (com.clodhub/computer-players) version 1.0.0, supplied by the recipe or application (optional; may stay unconnected).
+- `round-history` (com.clodhub/round-history) version 1.0.0, supplied by the recipe or application.
+- `rules-settings` (com.clodhub/rules-settings) version 1.0.0, supplied by the recipe or application.
 
 Each `interfaces/required-<id>.json` is a byte copy of the providing component's document.
 

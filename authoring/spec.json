@@ -1,6 +1,7 @@
 {
   "name": "turn-engine",
-  "version": "0.12.0",
+  "version": "0.13.0",
+  "sourceRevision": "19905b75dbea89fbfd424d67fe26c81aaed0e018",
   "title": "Turn engine",
   "description": "The game-independent engine behind a multiplayer table: lifecycle, checked actions with error codes, turn order, scheduled steps, and the GameAdapter that realtime-rooms calls. It drives a game through the game-rules interface and composes seating, clock, views, presence, tournament, computer players, history and settings by injection.",
   "facilities": [
@@ -28,7 +29,7 @@
   "provides": [
     {
       "id": "game-adapter",
-      "type": "ae/game-adapter",
+      "type": "com.clodhub/game-adapter",
       "version": "1.0.0",
       "path": "interfaces/game-adapter.json"
     }
@@ -36,56 +37,56 @@
   "requires": [
     {
       "id": "game-rules",
-      "type": "ae/game-rules",
+      "type": "com.clodhub/game-rules",
       "version": "1.0.0",
       "path": "interfaces/required-game-rules.json"
     },
     {
       "id": "seating",
-      "type": "ae/seating",
+      "type": "com.clodhub/seating",
       "version": "1.0.0",
       "path": "interfaces/required-seating.json"
     },
     {
       "id": "game-clock",
-      "type": "ae/game-clock",
+      "type": "com.clodhub/game-clock",
       "version": "1.0.0",
       "path": "interfaces/required-game-clock.json"
     },
     {
       "id": "private-views",
-      "type": "ae/private-views",
+      "type": "com.clodhub/private-views",
       "version": "1.0.0",
       "path": "interfaces/required-private-views.json"
     },
     {
       "id": "presence",
-      "type": "ae/presence",
+      "type": "com.clodhub/presence",
       "version": "1.0.0",
       "path": "interfaces/required-presence.json"
     },
     {
       "id": "tournament",
-      "type": "ae/tournament",
+      "type": "com.clodhub/tournament",
       "version": "1.0.0",
       "path": "interfaces/required-tournament.json"
     },
     {
       "id": "computer-players",
-      "type": "ae/computer-players",
+      "type": "com.clodhub/computer-players",
       "version": "1.0.0",
       "path": "interfaces/required-computer-players.json",
       "optional": true
     },
     {
       "id": "round-history",
-      "type": "ae/round-history",
+      "type": "com.clodhub/round-history",
       "version": "1.0.0",
       "path": "interfaces/required-round-history.json"
     },
     {
       "id": "rules-settings",
-      "type": "ae/rules-settings",
+      "type": "com.clodhub/rules-settings",
       "version": "1.0.0",
       "path": "interfaces/required-rules-settings.json"
     }
@@ -163,7 +164,7 @@
     "scenarios": "Two people and a computer sit; the host starts; a counting game is played one move at a time; the loser of enough rounds is offered a rebuy, declines by silence, and the other is crowned; thirty seconds later the room is a lobby again. A person's connection drops mid-round: the table keeps running, the person is acted for when their countdown ends, and their next turns are acted for as soon as the settle ends. The host goes away between rounds: everything pauses until the host is back.",
     "updates": "Patch updates replace files. The saved game state carries `schema: 1`; `restore` refuses anything else. Removal deletes the owned sources and the application's imports; stored room state stays in the room's own storage."
   },
-  "agentInstructions": "Select `clodhub/turn-engine` once per recipe. Connect `game-rules` to the game (holdem-rules for poker), and `seating`, `game-clock`, `private-views`, `presence`, `tournament`, `computer-players`, `round-history` and `rules-settings` to those components; connect the provided `game-adapter` to realtime-rooms' `game` requirement. Leave `decisionSeconds` empty unless the recipe sets it outside the house rules. `computer-players` is an optional requirement: a recipe without computer players leaves it unconnected, and in code `parts.computers` is left out (the engine then uses the no-computers stand-in). Connect it when computer players are wanted. The engine passes game-clock `advance` the flags `{action, level}`: the level clock stops while `tournament.levelClockRuns` is false, so blind levels do not run during a rebuy decision.",
+  "agentInstructions": "Select `pkg:clod/com.clodhub/turn-engine` once per recipe. Connect `game-rules` to the game (holdem-rules for poker), and `seating`, `game-clock`, `private-views`, `presence`, `tournament`, `computer-players`, `round-history` and `rules-settings` to those components; connect the provided `game-adapter` to realtime-rooms' `game` requirement. Leave `decisionSeconds` empty unless the recipe sets it outside the house rules. `computer-players` is an optional requirement: a recipe without computer players leaves it unconnected, and in code `parts.computers` is left out (the engine then uses the no-computers stand-in). Connect it when computer players are wanted. The engine passes game-clock `advance` the flags `{action, level}`: the level clock stops while `tournament.levelClockRuns` is false, so blind levels do not run during a rebuy decision.",
   "developerInstructions": "Nothing to supply: no accounts or keys. Write one `createGameAdapter(parts)` call in your server entry with the components you selected, and pass it to `createRoomClass`. A new game needs only a `game-rules` implementation; the lobby, rebuys, pausing, presence and computer play come from the other components. To check it works, run the commands below. Provider shapes: `tournament` takes chip-ledger as `create/issue/balance/issued/setSeats` (`createLedgerApi(settings)`) and level-schedule as `levelAt/describe` (`createScheduleApi(schedule)`). To check the whole stack, run `node --test authoring/integration-real.test.ts` in the repository (not packaged); it names every provider that lacks a declared operation.",
   "suitability": {
     "format": 1,
@@ -186,13 +187,13 @@
   "classes": [
     {
       "reference": {
-        "name": "clodhub/turn-engine-class",
+        "name": "pkg:clod/com.clodhub/turn-engine-class",
         "version": "1.1.0",
-        "digest": "e6a49666ce4ee186d55a4402a9208e91fd18784d90b7177b20f0f9a4ca78f1d1"
+        "digest": "edf80bd659ad68bbf71fc3f13641805ea55b5be2b0d5783c3638186bd4be9d46"
       },
       "descriptor": {
-        "format": 2,
-        "name": "clodhub/turn-engine-class",
+        "format": 3,
+        "name": "pkg:clod/com.clodhub/turn-engine-class",
         "version": "1.1.0",
         "title": "Turn engine",
         "summary": "Lobby, turns, timing and computer players around a game's own rules",
@@ -200,7 +201,7 @@
         "presentation": "none",
         "provides": [
           {
-            "type": "ae/game-adapter",
+            "type": "com.clodhub/game-adapter",
             "version": "1.0.0",
             "path": "classes/turn-engine-class/game-adapter.json",
             "modules": {
@@ -212,39 +213,39 @@
         ],
         "requires": [
           {
-            "type": "ae/game-rules",
+            "type": "com.clodhub/game-rules",
             "version": "1.0.0"
           },
           {
-            "type": "ae/seating",
+            "type": "com.clodhub/seating",
             "version": "1.0.0"
           },
           {
-            "type": "ae/game-clock",
+            "type": "com.clodhub/game-clock",
             "version": "1.0.0"
           },
           {
-            "type": "ae/private-views",
+            "type": "com.clodhub/private-views",
             "version": "1.0.0"
           },
           {
-            "type": "ae/presence",
+            "type": "com.clodhub/presence",
             "version": "1.0.0"
           },
           {
-            "type": "ae/tournament",
+            "type": "com.clodhub/tournament",
             "version": "1.0.0"
           },
           {
-            "type": "ae/computer-players",
+            "type": "com.clodhub/computer-players",
             "version": "1.0.0"
           },
           {
-            "type": "ae/round-history",
+            "type": "com.clodhub/round-history",
             "version": "1.0.0"
           },
           {
-            "type": "ae/rules-settings",
+            "type": "com.clodhub/rules-settings",
             "version": "1.0.0"
           }
         ],
@@ -283,11 +284,11 @@
           },
           {
             "path": "classes/turn-engine-class/game-adapter.json",
-            "digest": "5f3cb93953794502d3d1f27deef7530d9aff8a1c70e89d5238ef64dce4f99110"
+            "digest": "c68f4026e0f2d744cb72c56258bdf0142e6c3c83332f2c89f1bc8a4ace9e657a"
           },
           {
             "path": "classes/turn-engine-class/runtime.mjs",
-            "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+            "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
           }
         ],
         "verification": [
@@ -319,9 +320,9 @@
   ],
   "implements": [
     {
-      "name": "clodhub/turn-engine-class",
+      "name": "pkg:clod/com.clodhub/turn-engine-class",
       "version": "1.1.0",
-      "digest": "e6a49666ce4ee186d55a4402a9208e91fd18784d90b7177b20f0f9a4ca78f1d1"
+      "digest": "edf80bd659ad68bbf71fc3f13641805ea55b5be2b0d5783c3638186bd4be9d46"
     }
   ],
   "upstream": [],

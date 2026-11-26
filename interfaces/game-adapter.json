@@ -1,9 +1,9 @@
 {
   "openrpc": "1.3.2",
   "info": {
-    "title": "ae/game-adapter",
+    "title": "com.clodhub/game-adapter",
     "version": "1.0.0",
-    "description": "The GameAdapter a room server calls (realtime-rooms), over a turn engine that drives any game written to ae/game-rules. Build it with createGameAdapter(parts, settings), where parts holds one implementation of each required interface; methods named `GameAdapter.<name>` are members of the object it returns. State is JSON-serialisable and every method is pure. Wire actions: start, addBot, kick {playerId}, leave, sitOut, return, pause, resume, cancel, newGame, rebuy {accept}, and any move the game's parseMove accepts. Error codes and HTTP status: badName 400, badRequest 400, roomFull 409, staleVersion 409, badToken, notYourTurn, wrongPhase, notEnoughPlayers, badAmount, badTarget, notAllowed, paused, unknownPlayer 422; a code a game reports that is not in this list is sent as notAllowed. Without a computer-players part (parts.computers omitted) addBot is refused and no seat is filled. TypeScript, `implementation/server/adapter.ts` (engine.ts, parts.ts, no-computers.ts)."
+    "description": "The GameAdapter a room server calls (realtime-rooms), over a turn engine that drives any game written to com.clodhub/game-rules. Build it with createGameAdapter(parts, settings), where parts holds one implementation of each required interface; methods named `GameAdapter.<name>` are members of the object it returns. State is JSON-serialisable and every method is pure. Wire actions: start, addBot, kick {playerId}, leave, sitOut, return, pause, resume, cancel, newGame, rebuy {accept}, and any move the game's parseMove accepts. Error codes and HTTP status: badName 400, badRequest 400, roomFull 409, staleVersion 409, badToken, notYourTurn, wrongPhase, notEnoughPlayers, badAmount, badTarget, notAllowed, paused, unknownPlayer 422; a code a game reports that is not in this list is sent as notAllowed. Without a computer-players part (parts.computers omitted) addBot is refused and no seat is filled. TypeScript, `implementation/server/adapter.ts` (engine.ts, parts.ts, no-computers.ts)."
   },
   "methods": [
     {
@@ -1811,7 +1811,7 @@
               "legal",
               "prompt"
             ],
-            "x-clodhub-interface": "ae/game-rules"
+            "x-clodhub-interface": "com.clodhub/game-rules"
           },
           "seating": {
             "type": "object",
@@ -1908,7 +1908,7 @@
               "retain",
               "compact"
             ],
-            "x-clodhub-interface": "ae/seating"
+            "x-clodhub-interface": "com.clodhub/seating"
           },
           "clock": {
             "type": "object",
@@ -1937,7 +1937,7 @@
               "elapsed",
               "wallAt"
             ],
-            "x-clodhub-interface": "ae/game-clock"
+            "x-clodhub-interface": "com.clodhub/game-clock"
           },
           "views": {
             "type": "object",
@@ -1950,7 +1950,7 @@
             "required": [
               "redact"
             ],
-            "x-clodhub-interface": "ae/private-views"
+            "x-clodhub-interface": "com.clodhub/private-views"
           },
           "presence": {
             "type": "object",
@@ -2063,7 +2063,7 @@
               "holds",
               "nextWake"
             ],
-            "x-clodhub-interface": "ae/presence"
+            "x-clodhub-interface": "com.clodhub/presence"
           },
           "tournament": {
             "type": "object",
@@ -2168,7 +2168,7 @@
               "cancel",
               "winner"
             ],
-            "x-clodhub-interface": "ae/tournament"
+            "x-clodhub-interface": "com.clodhub/tournament"
           },
           "computers": {
             "$ref": "#/components/schemas/ComputersPart"
@@ -2192,7 +2192,7 @@
               "push",
               "list"
             ],
-            "x-clodhub-interface": "ae/round-history"
+            "x-clodhub-interface": "com.clodhub/round-history"
           },
           "settings": {
             "type": "object",
@@ -2205,7 +2205,7 @@
             "required": [
               "value"
             ],
-            "x-clodhub-interface": "ae/rules-settings"
+            "x-clodhub-interface": "com.clodhub/rules-settings"
           }
         },
         "required": [
@@ -2272,7 +2272,7 @@
           "choose",
           "observe"
         ],
-        "x-clodhub-interface": "ae/computer-players"
+        "x-clodhub-interface": "com.clodhub/computer-players"
       },
       "GameAdapter": {
         "type": "object",

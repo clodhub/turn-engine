@@ -1,9 +1,9 @@
 {
   "openrpc": "1.3.2",
   "info": {
-    "title": "ae/private-views",
+    "title": "com.clodhub/private-views",
     "version": "1.0.0",
-    "description": "Send each viewer only what they may see. Server (server/private-views.ts): viewFor conceals a copy of the state by a policy; redact does the same for facts grouped by owner. Clients (web/views.ts; Swift enum PrivateViews and protocol ViewEnvelope; Kotlin package ae.views): which arriving view to keep. Methods are tagged with the languages that provide them. S is the application's state and V its view; both are JSON values.",
+    "description": "Send each viewer only what they may see. Server (server/private-views.ts): viewFor conceals a copy of the state by a policy; redact does the same for facts grouped by owner. Clients (web/views.ts; Swift enum PrivateViews and protocol ViewEnvelope; Kotlin package com.clodhub.views): which arriving view to keep. Methods are tagged with the languages that provide them. S is the application's state and V its view; both are JSON values.",
     "license": {
       "name": "Apache-2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0"

@@ -1,7 +1,7 @@
 {
   "openrpc": "1.3.2",
   "info": {
-    "title": "ae/computer-players",
+    "title": "com.clodhub/computer-players",
     "version": "1.0.0",
     "description": "Computer players: which names they sit under, how long they wait before moving, and when one plays for a person who is away. Pure over a small state (the strategy's memory); the moves come from an injected player strategy. TypeScript, `implementation/server/computers.ts`. Build once with createComputers(settings, {strategy, clock, seating}); methods named `Computers.<name>` are members of the object it returns. Seating state, game clock state and observations are opaque here. Clock times are milliseconds on the action clock; wall times are epoch milliseconds."
   },
@@ -924,7 +924,7 @@
           "choose",
           "observe"
         ],
-        "x-clodhub-interface": "ae/player-strategy"
+        "x-clodhub-interface": "com.clodhub/player-strategy"
       },
       "Clock": {
         "type": "object",
@@ -941,7 +941,7 @@
           "elapsed",
           "wallAt"
         ],
-        "x-clodhub-interface": "ae/game-clock"
+        "x-clodhub-interface": "com.clodhub/game-clock"
       },
       "SeatsApi": {
         "type": "object",
@@ -970,7 +970,7 @@
           "join",
           "canAddComputer"
         ],
-        "x-clodhub-interface": "ae/seating"
+        "x-clodhub-interface": "com.clodhub/seating"
       },
       "Computers": {
         "type": "object",
